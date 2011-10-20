@@ -1,0 +1,17 @@
+= simple_form_for(@sale) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :sold_on, :as => :date, :start_year => Time.now.year - 1
+    = f.input :last_change_on, :as => :date, :start_year => Time.now.year - 1
+    /= f.input :change_chamber, :as => :boolean
+    = f.input :price
+    = f.hidden_field :customer_id
+    = f.input :customer_name
+    = f.input :product_id, :as => :select, :collection => Product.all
+    = f.label :change_chamber
+    = f.check_box(:change_chamber)
+    = f.input :sale_id, :as => :select, :collection => []
+
+  .actions
+    = f.button :submit

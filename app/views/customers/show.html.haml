@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @customer.name
+%p
+  %b Date of birth:
+  = @customer.date_of_birth
+%p
+  %b Cpf:
+  = @customer.cpf
+%p
+  %b Rg:
+  = @customer.rg
+%p
+  %b Address:
+  = @customer.address
+%p
+  %b Neighborhood:
+  = @customer.neighborhood
+%p
+  %b City:
+  = @customer.city
+%p
+  %b Cep:
+  = @customer.cep
+%p
+  %b Work address:
+  = @customer.work_address
+%p
+  %b Phone number:
+  = @customer.phone_number
+%p
+  %b Mobile phone:
+  = @customer.mobile_phone
+
+= link_to 'Edit', edit_customer_path(@customer)
+\|
+= link_to 'Back', customers_path

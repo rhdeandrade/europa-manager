@@ -1,0 +1,25 @@
+one:
+  name: MyString
+  date_of_birth: 2011-10-11
+  cpf: MyString
+  rg: MyString
+  address: MyString
+  neighborhood: MyString
+  city: MyString
+  cep: MyString
+  work_address: MyString
+  phone_number: MyString
+  mobile_phone: MyString
+
+two:
+  name: MyString
+  date_of_birth: 2011-10-11
+  cpf: MyString
+  rg: MyString
+  address: MyString
+  neighborhood: MyString
+  city: MyString
+  cep: MyString
+  work_address: MyString
+  phone_number: MyString
+  mobile_phone: MyString

@@ -1,0 +1,9 @@
+= simple_form_for(@product) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :name
+    = f.input :validity, :as => :select, :collection => [0, 12, 24]
+
+  .actions
+    = f.button :submit

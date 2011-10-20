@@ -1,0 +1,18 @@
+= simple_form_for(@customer) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :name
+    = f.input :date_of_birth, :as => :date, :start_year => 1910
+    = f.input :cpf
+    = f.input :rg
+    = f.input :address
+    = f.input :neighborhood
+    = f.input :city
+    = f.input :cep
+    = f.input :work_address
+    = f.input :phone_number
+    = f.input :mobile_phone
+
+  .actions
+    = f.button :submit

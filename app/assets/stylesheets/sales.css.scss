@@ -1,0 +1,12 @@
+// Place all the styles related to the Sales controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#sale_change_chamber {
+	& + div {
+		display: none;
+	}
+	&:checked + div {
+		display: block;
+	}
+}

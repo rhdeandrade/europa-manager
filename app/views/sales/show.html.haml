@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Sold on:
+  = @sale.sold_on
+%p
+  %b Last change on:
+  = @sale.last_change_on
+%p
+  %b Change chamber:
+  = @sale.change_chamber
+%p
+  %b Price:
+  = @sale.price
+%p
+  %b Customer:
+  = @sale.customer.name
+%p
+  %b Product:
+  = @sale.product.name
+
+= link_to 'Edit', edit_sale_path(@sale)
+\|
+= link_to 'Back', sales_path
