@@ -49,10 +49,11 @@ class SalesController < ApplicationController
     @sale = Sale.new(params[:sale])
     @sale.sold_on = filter_time(params[:sale], :sold_on)
 
-    if !@sale.change_chamber
-      @sale.last_change_on = @sale.sold_on
-    else
-      #update the main sale
+    @sale.last_change_on = @sale.sold_on
+    if @sale.change_chamber
+      sale_old = Sale.find(@sale.sale_id)
+      sale_old.last_change_on = @sale.sold_on
+      sale_old.save
     end
     
 
