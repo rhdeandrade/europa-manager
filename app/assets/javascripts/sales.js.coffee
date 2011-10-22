@@ -11,7 +11,6 @@ jQuery ->
 			$select = $(".sale #sale_sale_id")
 			$.getJSON("/sales", {customer_id: id}, (data, status, xhr) ->
 				$.each(data, (i, option) ->
-					console.log(option)
 					$select.append($("<option/>").val(option.id).text(option.product_name))
 				)
 			)

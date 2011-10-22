@@ -3,7 +3,7 @@
 
   .inputs
     = f.input :sold_on, :as => :date, :start_year => Time.now.year - 1
-    = f.input :last_change_on, :as => :date, :start_year => Time.now.year - 1
+    /= f.input :last_change_on, :as => :date, :start_year => Time.now.year - 1
     /= f.input :change_chamber, :as => :boolean
     = f.input :price
     = f.hidden_field :customer_id

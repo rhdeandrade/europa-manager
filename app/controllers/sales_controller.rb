@@ -4,7 +4,7 @@ class SalesController < ApplicationController
 
   def index
     if params[:customer_id]
-      @sales = Sale.where(customer_id: params[:customer_id])
+      @sales = Sale.where(customer_id: params[:customer_id], :change_chamber => "false")
     else
       @sales = Sale.all  
     end
@@ -47,8 +47,14 @@ class SalesController < ApplicationController
   # POST /sales.json
   def create
     @sale = Sale.new(params[:sale])
-    @sale.last_change_on = filter_time(params[:sale], :last_change_on)
     @sale.sold_on = filter_time(params[:sale], :sold_on)
+
+    if !@sale.change_chamber
+      @sale.last_change_on = @sale.sold_on
+    else
+      #update the main sale
+    end
+    
 
     respond_to do |format|
       if @sale.save
