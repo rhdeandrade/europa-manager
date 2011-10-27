@@ -1,0 +1,12 @@
+%h1 Reports#generate
+= form_tag(reports_path, :method=>'get') do
+  %p
+    City:
+    %br/
+    = text_field_tag "city"
+  %p
+    Neighborhood:
+    %br/
+    = text_field_tag "neighborhood"
+  %p
+    = submit_tag 'Submit'

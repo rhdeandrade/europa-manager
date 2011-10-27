@@ -1,5 +1,7 @@
 EuropaManager::Application.routes.draw do
 
+  get "reports/new"
+
   get "sessions/index"
 
   #match "/customers/:id" => "patients#show"
@@ -11,6 +13,8 @@ EuropaManager::Application.routes.draw do
   resources :customers
 
   root :to => "sessions#index"
+
+  resources :reports
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

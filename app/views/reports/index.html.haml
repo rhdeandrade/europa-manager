@@ -1,0 +1,19 @@
+%h1 Report Generated
+
+%table
+  %tr
+    %th Sold on
+    %th Last change on
+    %th Change chamber
+    %th Price
+    %th Customer
+    %th Product
+
+  - @sales.each do |sale|
+    %tr
+      %td= sale.sold_on
+      %td= sale.last_change_on
+      %td= sale.change_chamber
+      %td= sale.price
+      %td= sale.customer_id
+      %td= Product.find(sale.product_id).name

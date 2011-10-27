@@ -21,4 +21,6 @@ class Customer
   validates :rg, :presence => true
   validates :phone_number, :presence => true
   validates :address, :presence => true
+
+  has_many :sales
 end
