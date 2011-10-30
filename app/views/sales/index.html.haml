@@ -1,13 +1,13 @@
-%h1 Listing sales
+%h1 Todas as vendas
 
 %table
   %tr
-    %th Sold on
-    %th Last change on
-    %th Change chamber
-    %th Price
-    %th Customer
-    %th Product
+    %th Data Venda -
+    %th Última Troca -
+    %th Troca de Câmara -
+    %th Preço
+    %th Cliente 
+    %th Produto
     %th
     %th
     %th
@@ -16,14 +16,14 @@
     %tr
       %td= sale.sold_on
       %td= sale.last_change_on
-      %td= sale.change_chamber
+      %td= sale.change_chamber ? "Sim" : "Não"
       %td= sale.price
-      %td= sale.customer_id
+      %td= Customer.find(sale.customer_id).name
       %td= Product.find(sale.product_id).name
-      %td= link_to 'Show', sale
-      %td= link_to 'Edit', edit_sale_path(sale)
-      %td= link_to 'Destroy', sale, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Ver', sale
+      %td= link_to 'Editar', edit_sale_path(sale)
+      %td= link_to 'Apagar', sale, :confirm => 'Deletar esta venda?', :method => :delete
 
 %br
 
-= link_to 'New Sale', new_sale_path
+= link_to 'Nova venda', new_sale_path

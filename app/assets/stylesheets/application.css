@@ -29,7 +29,7 @@ a {
 
 #container {
   width: 75%;
-  margin: 0 auto;
+  margin-left: 10%; margin-right: 10%;
   background-color: #FFF;
   padding: 20px 40px;
   border: solid 1px black;

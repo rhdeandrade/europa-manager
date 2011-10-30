@@ -1,39 +1,39 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b Nome:
   = @customer.name
 %p
-  %b Date of birth:
+  %b Data de nascimento:
   = @customer.date_of_birth
 %p
-  %b Cpf:
+  %b CPF:
   = @customer.cpf
 %p
-  %b Rg:
+  %b RG:
   = @customer.rg
 %p
-  %b Address:
+  %b Endereço:
   = @customer.address
 %p
-  %b Neighborhood:
+  %b Bairro:
   = @customer.neighborhood
 %p
-  %b City:
+  %b Cidade:
   = @customer.city
 %p
-  %b Cep:
+  %b CEP:
   = @customer.cep
 %p
-  %b Work address:
+  %b Local de trabalho:
   = @customer.work_address
 %p
-  %b Phone number:
+  %b Telefone:
   = @customer.phone_number
 %p
-  %b Mobile phone:
+  %b Celular:
   = @customer.mobile_phone
 
-= link_to 'Edit', edit_customer_path(@customer)
+= link_to 'Editar', edit_customer_path(@customer)
 \|
-= link_to 'Back', customers_path
+= link_to 'Ver todos os clientes', customers_path

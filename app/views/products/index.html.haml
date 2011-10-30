@@ -1,9 +1,9 @@
-%h1 Listing products
+%h1 Todos os produtos
 
 %table
   %tr
-    %th Name
-    %th Validity
+    %th Nome
+    %th Validade
     %th
     %th
     %th
@@ -12,10 +12,10 @@
     %tr
       %td= product.name
       %td= product.validity
-      %td= link_to 'Show', product
-      %td= link_to 'Edit', edit_product_path(product)
-      %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Ver', product
+      %td= link_to 'Editar', edit_product_path(product)
+      %td= link_to 'Deletar', product, :confirm => 'Deletar produto?', :method => :delete
 
 %br
 
-= link_to 'New Product', new_product_path
+= link_to 'Novo produto', new_product_path

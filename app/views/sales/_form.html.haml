@@ -2,16 +2,16 @@
   = f.error_notification
 
   .inputs
-    = f.input :sold_on, :as => :date, :start_year => Time.now.year - 1
+    = f.input :sold_on, :label => "Data venda",:as => :date, :start_year => Time.now.year - 2
     /= f.input :last_change_on, :as => :date, :start_year => Time.now.year - 1
     /= f.input :change_chamber, :as => :boolean
-    = f.input :price
+    = f.input :price, :label => "Preço"
     = f.hidden_field :customer_id
-    = f.input :customer_name
-    = f.input :product_id, :as => :select, :collection => Product.all
-    = f.label :change_chamber
+    = f.input :customer_name, :label => "Cliente"
+    = f.input :product_id, :label => "Produto", :as => :select, :collection => Product.all
+    = f.label "Troca de câmara"
     = f.check_box(:change_chamber)
-    = f.input :sale_id, :as => :select, :collection => []
+    = f.input :sale_id, :label => "Produto da troca",:as => :select, :collection => []
 
   .actions
-    = f.button :submit
+    = f.button :submit, :value => "Salvar venda"

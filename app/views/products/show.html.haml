@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b Nome:
   = @product.name
 %p
-  %b Validity:
+  %b Validade:
   = @product.validity
 
-= link_to 'Edit', edit_product_path(@product)
+= link_to 'Editar', edit_product_path(@product)
 \|
-= link_to 'Back', products_path
+= link_to 'Ver todos os produtos', products_path

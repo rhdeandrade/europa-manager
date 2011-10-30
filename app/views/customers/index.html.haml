@@ -1,19 +1,18 @@
-%h1 Listing customers
+%h1 Todos os clientes
 
 %table
   %tr
-    %th Name
-    %th Date of birth
-    %th Cpf
-    %th Rg
-    %th Address
-    %th Neighborhood
-    %th City
-    %th Cep
-    %th Work address
-    %th Phone number
-    %th Mobile phone
-    %th
+    %th Nome
+    %th Data de nascimento
+    %th CPF
+    %th RG
+    %th Endereço
+    %th Bairro
+    %th Cidade
+    %th CEP
+    %th Local de trabalho
+    %th Telefone
+    %th Celular
     %th
     %th
 
@@ -30,10 +29,9 @@
       %td= customer.work_address
       %td= customer.phone_number
       %td= customer.mobile_phone
-      %td= link_to 'Show', customer
-      %td= link_to 'Edit', edit_customer_path(customer)
-      %td= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Editar', edit_customer_path(customer)
+      %td= link_to 'Deletar', customer, :confirm => 'Deletar cliente?', :method => :delete
 
 %br
 
-= link_to 'New Customer', new_customer_path
+= link_to 'Cadastrar novo cliente', new_customer_path

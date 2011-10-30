@@ -1,19 +1,19 @@
-%h1 Report Generated
+%h1 Gerar Relatório de Vendas
 
 %table
   %tr
-    %th Sold on
-    %th Last change on
-    %th Change chamber
-    %th Price
-    %th Customer
-    %th Product
+    %th Data venda ||
+    %th Última troca ||
+    %th Preço ||
+    %th Telefone cliente ||
+    %th Celular cliente ||
+    %th Produto
 
   - @sales.each do |sale|
     %tr
       %td= sale.sold_on
       %td= sale.last_change_on
-      %td= sale.change_chamber
       %td= sale.price
-      %td= sale.customer_id
+      %td= Customer.find(sale.customer_id).phone_number
+      %td= Customer.find(sale.customer_id).mobile_phone
       %td= Product.find(sale.product_id).name

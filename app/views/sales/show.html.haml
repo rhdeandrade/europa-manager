@@ -1,24 +1,22 @@
 %p#notice= notice
 
 %p
-  %b Sold on:
+  %b Data venda:
   = @sale.sold_on
 %p
-  %b Last change on:
+  %b Última troca:
   = @sale.last_change_on
 %p
-  %b Change chamber:
-  = @sale.change_chamber
+  %b Troca de câmara:
+  = @sale.change_chamber ? "Sim" : "Não"
 %p
-  %b Price:
+  %b Preço:
   = @sale.price
 %p
-  %b Customer:
+  %b Cliente:
   = @sale.customer.name
 %p
-  %b Product:
+  %b Produto:
   = @sale.product.name
 
-= link_to 'Edit', edit_sale_path(@sale)
-\|
-= link_to 'Back', sales_path
+= link_to 'Ver todas as vendas', sales_path

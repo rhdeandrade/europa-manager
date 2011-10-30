@@ -1,12 +1,14 @@
-%h1 Reports#generate
+%h1 Gerar relatório
 = form_tag(reports_path, :method=>'get') do
   %p
-    City:
+    Cidade:
     %br/
     = text_field_tag "city"
   %p
-    Neighborhood:
+    Bairro:
     %br/
     = text_field_tag "neighborhood"
   %p
-    = submit_tag 'Submit'
+    = submit_tag 'Enviar'
+  %P
+    = link_to "Ver todas as vendas", sales_path

@@ -2,17 +2,17 @@
   = f.error_notification
 
   .inputs
-    = f.input :name
-    = f.input :date_of_birth, :as => :date, :start_year => 1910
-    = f.input :cpf
-    = f.input :rg
-    = f.input :address
-    = f.input :neighborhood
-    = f.input :city
-    = f.input :cep
-    = f.input :work_address
-    = f.input :phone_number
-    = f.input :mobile_phone
+    = f.input :name, :label => "Nome"
+    = f.input :date_of_birth, :label => "Data de nascimento", :as => :date, :start_year => 1920
+    = f.input :cpf, :label => "CPF"
+    = f.input :rg, :label => "RG"
+    = f.input :address, :label => "Endereço (Ex: Rua, 12)"
+    = f.input :neighborhood, :label => "Bairro"
+    = f.input :city, :label => "Cidade"
+    = f.input :cep, :label => "CEP"
+    = f.input :work_address, :label => "Endereço trabalho (Ex: Rua, 12)"
+    = f.input :phone_number, :label => "Telefone"
+    = f.input :mobile_phone, :label => "Celular"
 
   .actions
-    = f.button :submit
+    = f.button :submit, :value => "Salvar cliente"
