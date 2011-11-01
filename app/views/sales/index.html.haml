@@ -21,7 +21,6 @@
       %td= Customer.find(sale.customer_id).name
       %td= Product.find(sale.product_id).name
       %td= link_to 'Ver', sale
-      %td= link_to 'Editar', edit_sale_path(sale)
       %td= link_to 'Apagar', sale, :confirm => 'Deletar esta venda?', :method => :delete
 
 %br
