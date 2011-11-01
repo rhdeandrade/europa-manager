@@ -46,7 +46,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
+        format.html { redirect_to @customer, notice: 'Cliente cadastrado com sucesso.' }
         format.json { render json: @customer, status: :created, location: @customer }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       if @customer.update_attributes(params[:customer])
         @customer.date_of_birth = filter_time(params[:customer], :date_of_birth)
-        format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
+        format.html { redirect_to @customer, notice: 'Cliente alterado com sucesso.' }
         format.json { head :ok }
         @customer.save
       else

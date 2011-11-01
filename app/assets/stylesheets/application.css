@@ -61,7 +61,16 @@ a {
   font-size: 12px;
 }
 
-.error_messages h2 {
+span.error {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 13px;
+  margin: 0;
+  color: #c00;
+}
+
+p.error_notification,.error_messages h2 {
   text-align: left;
   font-weight: bold;
   padding: 5px 10px;

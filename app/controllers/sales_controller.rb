@@ -59,7 +59,7 @@ class SalesController < ApplicationController
 
     respond_to do |format|
       if @sale.save
-        format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
+        format.html { redirect_to @sale, notice: 'Venda efetuada com sucesso.' }
         format.json { render json: @sale, status: :created, location: @sale }
       else
         format.html { render action: "new" }
@@ -77,7 +77,7 @@ class SalesController < ApplicationController
       if @sale.update_attributes(params[:sale])
         @sale.last_change_on = filter_time(params[:sale], :last_change_on)
         @sale.sold_on = filter_time(params[:sale], :sold_on)
-        format.html { redirect_to @sale, notice: 'Sale was successfully updated.' }
+        format.html { redirect_to @sale, notice: 'Venda alterada com sucesso.' }
         format.json { head :ok }
         @sale.save
       else

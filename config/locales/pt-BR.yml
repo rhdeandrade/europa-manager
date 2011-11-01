@@ -1,0 +1,8 @@
+pt-BR:
+  mongoid:
+    errors:
+      models:
+        customer:
+          attributes:
+            cpf:
+              taken: CPF já cadastrado
