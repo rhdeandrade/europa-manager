@@ -4,6 +4,7 @@ class Sale
   field :last_change_on, :type => Date
   field :change_chamber, :type => Boolean
   field :price, :type => Float
+  field :plan, :type => String
 
   belongs_to :customer
   belongs_to :product

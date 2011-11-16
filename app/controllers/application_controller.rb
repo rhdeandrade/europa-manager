@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  http_basic_authenticate_with :name => "waterpura", :password => "*europa"
-	
+  http_basic_authenticate_with :name => "waterpura", :password => "agua25"
+
 
   def filter_time(attributes, name)
     attrs = attributes.collect do |key, value|
