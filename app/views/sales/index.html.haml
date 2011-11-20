@@ -17,7 +17,7 @@
     %tr
       %td= sale.sold_on
       %td= sale.last_change_on
-      %td= sale.change_chamber ? "Sim" : "Não"
+      %td= sale.change_chamber ? "Sim" : "Nao"
       %td= sale.price
       %td= sale.plan
       %td= Customer.find(sale.customer_id).name
