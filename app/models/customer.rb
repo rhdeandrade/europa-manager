@@ -27,4 +27,5 @@ class Customer
   validates :city, :presence => true
 
   has_many :sales
+
 end

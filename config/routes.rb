@@ -1,5 +1,7 @@
 EuropaManager::Application.routes.draw do
 
+  get "city/create"
+
   get "reports/new"
 
   get "sessions/index"

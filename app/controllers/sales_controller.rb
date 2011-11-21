@@ -6,9 +6,9 @@ class SalesController < ApplicationController
     if params[:customer_id]
       @sales = Sale.where(customer_id: params[:customer_id], :change_chamber => "false")
     else
-      @sales = Sale.all  
+      @sales = Sale.all
     end
-    
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -55,7 +55,7 @@ class SalesController < ApplicationController
       sale_old.last_change_on = @sale.sold_on
       sale_old.save
     end
-    
+
 
     respond_to do |format|
       if @sale.save

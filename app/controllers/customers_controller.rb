@@ -84,4 +84,9 @@ class CustomersController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def cities
+    File.readLines("cities.txt")
+  end
+
 end

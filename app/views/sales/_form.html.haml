@@ -8,8 +8,8 @@
     = f.input :price, :label => "Preço"
     = f.input :plan, :label => "Plano", :as => :select, :collection => ["À vista", "1x", "2x", "3x", "4x", "9x", "10x", "11x", "12x"]
     = f.hidden_field :customer_id
-    = f.input :customer_name, :label => "Cliente"
-    = f.input :product_id, :label => "Produto", :as => :select, :collection => Product.all
+    = f.input :customer_name, :label => "* Cliente"
+    = f.input :product_id, :label => "* Produto", :as => :select, :collection => Product.all
     = f.label "Troca de câmara"
     = f.check_box(:change_chamber)
     = f.input :sale_id, :label => "Produto da troca",:as => :select, :collection => []
