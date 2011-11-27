@@ -12,7 +12,7 @@ class Sale
   has_many :chamber_changes, class_name: "Sale"
   belongs_to :sale
 
-  validates_presence_of :product
+  validates_presence_of :product_id
   validates_presence_of :customer
   validates_presence_of :plan
   validates_presence_of :price, :message => "Escolha um cliente"

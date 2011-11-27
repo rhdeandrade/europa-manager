@@ -9,7 +9,6 @@ class SalesController < ApplicationController
       @sales = Sale.all
     end
 
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @sales.map {|s| { id: s.id, product_name: s.product.name }} }

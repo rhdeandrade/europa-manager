@@ -1,10 +1,14 @@
 EuropaManager::Application.routes.draw do
 
+  resources :cities
+
   get "city/create"
 
   get "reports/new"
 
   get "sessions/index"
+
+  get "/save_cities" => "cities#save_all_cities"
 
   #match "/customers/:id" => "patients#show"
 

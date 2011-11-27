@@ -2,11 +2,9 @@
 = form_tag(reports_path, :method=>'get') do
   %p
     Cidade:
-    %br/
-    = text_field_tag "city"
+    = collection_select("city", "city", City.all, :name, :name)
   %p
     Bairro:
-    %br/
     = text_field_tag "neighborhood"
   %p
     = submit_tag 'Enviar'
