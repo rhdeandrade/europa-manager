@@ -84,8 +84,8 @@ class CitiesController < ApplicationController
   def save_all_cities
     File.open('cities.txt').each_line{ |s|
       s = s.strip
-      citie = City.new(:name => s)
-      citie.save
+      #citie = City.new(:name => s)
+      #citie.save
     }
   end
 
