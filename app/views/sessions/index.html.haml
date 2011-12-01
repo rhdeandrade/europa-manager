@@ -1,14 +1,16 @@
-%h1 Escolha uma opção
-= link_to "Cadastrar novo cliente", new_customer_path
-\|
-= link_to "Ver todos os clientes", customers_path
-\|
-= link_to "Cadastrar novo produto", new_product_path
-\|
-= link_to "Ver todos os produtos", products_path
-\|
-= link_to "Cadastrar nova venda", new_sale_path
-\|
-= link_to "Ver todas as vendas", sales_path
-\|
-= link_to "Gerar relatório de vendas", new_report_path
+%h1.page-header Escolha uma opção
+%ul
+	%li 
+		=link_to "Cadastrar novo cliente", new_customer_path
+	%li 
+		=link_to "Ver todos os clientes", customers_path
+	%li  
+		=link_to "Cadastrar novo produto", new_product_path
+	%li 
+		=link_to "Ver todos os produtos", products_path
+	%li
+		= link_to "Cadastrar nova venda", new_sale_path
+	%li 
+		= link_to "Ver todas as vendas", sales_path
+	%li
+		= link_to "Gerar relatório de vendas", new_report_path
