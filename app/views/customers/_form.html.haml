@@ -10,7 +10,6 @@
     = f.input :neighborhood, :label => "Bairro"
     = f.input :city, :label => "Cidade", :as => :select, :collection => City.all.map{|c| [c.name, c.name]}
     = f.input :cep, :label => "CEP (Ex: 89183120)"
-    = f.input :work_address, :label => "Endereço trabalho (Ex: Rua, 12)"
     = f.input :phone_number, :label => "Telefone"
     = f.input :mobile_phone, :label => "Celular"
 

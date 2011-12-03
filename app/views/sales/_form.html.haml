@@ -10,6 +10,7 @@
     = f.hidden_field :customer_id
     = f.input :customer_name, :label => "* Cliente"
     = f.input :product, :label => "* Produto", :as => :select, :collection => Product.all
+    = f.input :employee, :label => "* Vendedor", :as => :select, :collection => Employee.all
     = f.label "Troca de câmara"
     = f.check_box(:change_chamber)
     = f.input :sale_id, :label => "Produto da troca",:as => :select, :collection => []

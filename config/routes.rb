@@ -1,5 +1,7 @@
 EuropaManager::Application.routes.draw do
 
+  resources :employees
+
   resources :cities
 
   get "city/create"

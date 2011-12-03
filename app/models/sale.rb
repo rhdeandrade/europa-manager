@@ -8,6 +8,7 @@ class Sale
 
   belongs_to :customer
   belongs_to :product
+	belongs_to :employee
 
   has_many :chamber_changes, class_name: "Sale"
   belongs_to :sale

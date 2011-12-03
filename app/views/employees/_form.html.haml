@@ -1,0 +1,9 @@
+= simple_form_for(@employee) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :name, :label => "Nome"
+    = f.input :cpf
+
+  .actions
+    = f.button :submit, :value => "Salvar vendedor"

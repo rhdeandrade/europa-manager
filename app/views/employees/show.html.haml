@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @employee.name
+%p
+  %b Cpf:
+  = @employee.cpf
+
+= link_to 'Editar', edit_employee_path(@employee)
+\|
+= link_to 'Todos os vendedores', employees_path
