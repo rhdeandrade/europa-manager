@@ -4,13 +4,15 @@ EuropaManager::Application.routes.draw do
 
   resources :cities
 
+  get "commissions_reports/new"
+
   get "city/create"
 
   get "reports/new"
 
   get "sessions/index"
 
-  get "/save_cities" => "cities#save_all_cities"
+  #get "/save_cities" => "cities#save_all_cities"
 
   #match "/customers/:id" => "patients#show"
 
@@ -23,6 +25,8 @@ EuropaManager::Application.routes.draw do
   root :to => "sessions#index"
 
   resources :reports
+
+  resources :commission_reports
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

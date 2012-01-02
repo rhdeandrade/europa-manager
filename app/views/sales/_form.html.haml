@@ -6,6 +6,8 @@
     /= f.input :last_change_on, :as => :date, :start_year => Time.now.year - 1
     /= f.input :change_chamber, :as => :boolean
     = f.input :price, :label => "Preço"
+    = f.input :price_commission, :label => "Valor para comissão"
+    = f.input :percentage, :label => "Taxa da comissão (%)"
     = f.input :plan, :label => "Plano", :as => :select, :collection => ["À vista", "1x", "2x", "3x", "4x", "9x", "10x", "11x", "12x"]
     = f.hidden_field :customer_id
     = f.input :customer_name, :label => "* Cliente"

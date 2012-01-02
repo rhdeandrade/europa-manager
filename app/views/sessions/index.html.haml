@@ -1,4 +1,4 @@
-%h1.page-header Escolha uma opção
+%h2 Escolha uma opção
 %ul
 	%li 
 		=link_to "Cadastrar novo cliente", new_customer_path
@@ -13,8 +13,11 @@
 	%li 
 		= link_to "Ver todas as vendas", sales_path
 	%li
-		= link_to "Gerar relatório de vendas", new_report_path
-	%li
 		= link_to "Cadastrar novo vendedor", new_employee_path
 	%li
 		= link_to "Ver todos os vendedores", employees_path
+	%li
+		= link_to "Gerar relatório de vendas", new_report_path
+	%li
+		= link_to "Gerar comissão por vendedor", new_commission_report_path
+

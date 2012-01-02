@@ -23,6 +23,7 @@ class Customer
   validates :phone_number, :presence => true
   validates :address, :presence => true
   validates_numericality_of :cpf, :message => "CPF Sem . ou , e - apenas números"
+	validates_length_of :cpf, :minimim => 11, :maximum => 14, :message => "CPF/CNPJ inválido"
   validates_numericality_of :rg, :message => "RG Sem . apenas números"
   validates :city, :presence => true
 

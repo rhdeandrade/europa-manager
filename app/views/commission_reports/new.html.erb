@@ -1,0 +1,16 @@
+<%= form_tag(commission_reports_path, :method => "get") do  %>
+ <p/>
+    Vendedor:
+    <%= select_tag "employee_id", options_from_collection_for_select(Employee.all, "id", "name"), :include_blank => true%>
+
+ <p/>
+ 	Data Inicio:
+    <%= date_select("start_date", "start_date", :order => [:day, :month, :year]) %>
+ <p/>
+ 	Data Inicio:
+    <%= date_select("end_date", "end_date", :order => [:day, :month, :year]) %>
+ <p/>
+
+  <%= submit_tag 'Gerar relatório' %>
+
+<% end %>
