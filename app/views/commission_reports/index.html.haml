@@ -1,0 +1,23 @@
+%h1 Comissões
+
+%table
+  %tr
+    %th Data Venda
+    %th Vendedor
+    %th Preço
+    %th Comissão (%)
+    %th Valor comissão
+    %th Produto
+    %th Plano
+
+  - @sales.each do |sale|
+    %tr
+      %td= sale.sold_on
+      %td=  Employee.find(sale.employee_id).name
+      %td= sale.price
+      %td= sale.percentage
+      %td= sale.price_commission
+      %td= Product.find(sale.product_id).name
+      %td= sale.plan
+
+%br

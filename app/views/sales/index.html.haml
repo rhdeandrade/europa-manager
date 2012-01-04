@@ -4,9 +4,9 @@
   %tr
     %th Data Venda
     %th Última Troca
-    %th Troca de Câmara
     %th Preço
     %th Plano
+    %th Vendedor
     %th Cliente
     %th Produto
     %th
@@ -17,9 +17,9 @@
     %tr
       %td= sale.sold_on
       %td= sale.last_change_on
-      %td= sale.change_chamber ? "Sim" : "Não"
       %td= sale.price
       %td= sale.plan
+      %td= Employee.find(sale.employee_id).name
       %td= Customer.find(sale.customer_id).name
       %td= Product.find(sale.product_id).name
       %td= link_to 'Ver', sale
