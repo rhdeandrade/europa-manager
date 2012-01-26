@@ -3,7 +3,7 @@
 %table
   %tr
     %th Data Venda
-    %th Vendedor
+    %th Nome do Cliente
     %th Preço
     %th Comissão (%)
     %th Valor comissão
@@ -13,7 +13,7 @@
   - @sales.each do |sale|
     %tr
       %td= sale.sold_on
-      %td=  Employee.find(sale.employee_id).name
+      %td=  Customer.find(sale.customer_id).name
       %td= sale.price
       %td= sale.percentage
       %td= sale.price_commission
@@ -21,3 +21,5 @@
       %td= sale.plan
 
 %br
+%p Total (Valor para comissão * Porcentagem):
+=@total

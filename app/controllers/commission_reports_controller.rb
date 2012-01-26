@@ -21,6 +21,8 @@ class CommissionReportsController < ApplicationController
 
     @sales = Sale.where(:sold_on.gte => start_date, :sold_on.lte => end_date, employee_id: params[:employee_id])
 
-    puts @sales
+    @total = 0
+    @sales.map{|s| @total += (s.price_commission * s.percentage) / 100}
+
   end
 end
