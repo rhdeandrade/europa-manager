@@ -42,3 +42,5 @@ gem "mocha", :group => :test
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "thin"
 gem "rails-i18n"
+gem 'execjs'
+gem 'therubyracer'

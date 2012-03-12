@@ -3,15 +3,14 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-	$(".sale #sale_customer_name").autocomplete 
-		source: '/customers'
-		select: (event, ui) ->
-			id = ui.item.id
-			$(".sale #sale_customer_id").val(id)
-			$select = $(".sale #sale_sale_id")
-			$.getJSON("/sales", {customer_id: id}, (data, status, xhr) ->
-				$.each(data, (i, option) ->
-					$select.append($("<option/>").val(option.id).text(option.product_name))
-				)
-			)
-
+  $("#sale_customer_name").autocomplete
+    source: '/customers'
+    select: (event, ui) ->
+      id = ui.item.id
+      $("#sale_customer_id").val(id)
+      $select = $("#sale_sale_id")
+      $.getJSON("/sales", {customer_id: id}, (data, status, xhr) ->
+        $.each(data, (i, option) ->
+          $select.append($("<option/>").val(option.id).text(option.product_name))
+        )
+      )
