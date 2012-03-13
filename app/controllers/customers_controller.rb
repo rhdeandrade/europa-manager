@@ -85,6 +85,10 @@ class CustomersController < ApplicationController
     end
   end
 
+  def view_sales
+    @sales = Sale.where(customer_id: params[:customer_id])
+  end
+
   def cities
     File.readLines("cities.txt")
   end

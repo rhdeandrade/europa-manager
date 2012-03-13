@@ -1,0 +1,21 @@
+<h1>Procurar clientes</h1>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>CPF</th>
+    <th>Telefone</th>
+    <th>Endereço</th>
+    <th></th>
+  </tr>
+  <% @customers.each do |customer| %>
+    <tr>
+
+      <td><%= customer.name %></td>
+      <td><%= customer.cpf %></td>
+      <td><%= customer.phone_number %></td>
+      <td><%= customer.address %></td>
+      <td><%= link_to "Todas as vendas", customer_view_sales_path(customer) %></td>
+
+    </tr>
+  <% end %>
+</table>

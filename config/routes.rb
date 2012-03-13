@@ -1,5 +1,9 @@
 EuropaManager::Application.routes.draw do
 
+  get "find_customer/index"
+
+  get "find_customer/new"
+
   resources :employees
 
   resources :cities
@@ -16,11 +20,15 @@ EuropaManager::Application.routes.draw do
 
   #match "/customers/:id" => "patients#show"
 
+  #match "sales/view_sales/:cpf" => "sales#view_sales", :via => [:get], :method => "sales_view_sales(:cpf)"
+
   resources :sales
 
   resources :products
 
-  resources :customers
+  resources :customers do
+    get "view_sales"
+  end
 
   root :to => "sessions#index"
 

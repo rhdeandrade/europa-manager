@@ -1,0 +1,22 @@
+<h1>Vendas por cliente</h1>
+
+<table>
+  <tr>
+    <th>Produto</th>
+    <th>Data compra</th>
+    <th>Última troca</th>
+    <th>Preço</th>
+    <th>Plano</th>
+    <th></th>
+  </tr>
+  <% @sales.each do |sale| %>
+    <tr>
+      <td><%= Product.find(sale.product_id).name %></td>
+      <td><%= sale.sold_on %></td>
+      <td><%= sale.last_change_on %></td>
+      <td><%= sale.price %></td>
+      <td><%= sale.plan %></td>
+      <td><%= link_to "Ver venda", sale_path(sale) %></td>
+    </tr>
+  <% end %>
+</table>
