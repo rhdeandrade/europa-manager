@@ -21,5 +21,8 @@
 %p
   %b Produto:
   = @sale.product.name
+%p
+  %b Vendedor:
+  = @sale.employee.name
 
 = link_to 'Ver todas as vendas', sales_path
