@@ -6,7 +6,7 @@ class SalesController < ApplicationController
     if params[:customer_id]
       @sales = Sale.where(customer_id: params[:customer_id], :change_chamber => "false")
     else
-      @sales = Sale.order_by([[ :sold_on, :desc ]]).page(params[:page]).per(2)
+      @sales = Sale.order_by([[ :sold_on, :desc ]]).page(params[:page]).per(30)
     end
 
     respond_to do |format|
