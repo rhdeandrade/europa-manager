@@ -44,3 +44,4 @@ gem "thin"
 gem "rails-i18n"
 gem 'execjs'
 gem 'therubyracer'
+gem 'kaminari'

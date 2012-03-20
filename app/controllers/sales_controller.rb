@@ -6,7 +6,7 @@ class SalesController < ApplicationController
     if params[:customer_id]
       @sales = Sale.where(customer_id: params[:customer_id], :change_chamber => "false")
     else
-      @sales = Sale.all
+      @sales = Sale.order_by([[ :sold_on, :desc ]]).page(params[:page]).per(2)
     end
 
     respond_to do |format|
@@ -74,7 +74,6 @@ class SalesController < ApplicationController
 
     respond_to do |format|
       if @sale.update_attributes(params[:sale])
-        @sale.last_change_on = filter_time(params[:sale], :last_change_on)
         @sale.sold_on = filter_time(params[:sale], :sold_on)
         format.html { redirect_to @sale, notice: 'Venda alterada com sucesso.' }
         format.json { head :ok }
