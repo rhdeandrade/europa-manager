@@ -5,6 +5,7 @@ pt-BR:
       next: "Próximo"
       last: "Última"
       first: "Primeira"
+      truncate: ""
   mongoid:
     errors:
       models:
