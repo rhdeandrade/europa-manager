@@ -21,7 +21,6 @@
       %td= sale.customer.name
       %td= sale.product.name
       %td
-        = link_to 'Editar', edit_sale_path(sale)
         = link_to 'Ver', sale
         = link_to 'Apagar', sale, :confirm => 'Deletar esta venda?', :method => :delete
 
