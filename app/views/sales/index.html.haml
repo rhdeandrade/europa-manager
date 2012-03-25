@@ -10,8 +10,6 @@
     %th Cliente
     %th Produto
     %th
-    %th
-    %th
 
   - @sales.each do |sale|
     %tr
@@ -19,12 +17,16 @@
       %td= sale.last_change_on
       %td= sale.price
       %td= sale.plan
-      %td= Employee.find(sale.employee_id).name
-      %td= Customer.find(sale.customer_id).name
-      %td= Product.find(sale.product_id).name
-      %td= link_to 'Ver', sale
-      %td= link_to 'Apagar', sale, :confirm => 'Deletar esta venda?', :method => :delete
+      %td= sale.employee.name
+      %td= sale.customer.name
+      %td= sale.product.name
+      %td
+        = link_to 'Editar', edit_sale_path(sale)
+        = link_to 'Ver', sale
+        = link_to 'Apagar', sale, :confirm => 'Deletar esta venda?', :method => :delete
 
 %br
 
+= paginate @sales
+%br
 = link_to 'Nova venda', new_sale_path

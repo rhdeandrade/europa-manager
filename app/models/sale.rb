@@ -16,15 +16,15 @@ class Sale
   has_many :chamber_changes, class_name: "Sale"
   belongs_to :sale
 
-  validates_presence_of :product_id
-  validates_presence_of :customer
-  validates_presence_of :plan
-  validates_presence_of :percentage, :message => "Insira a taxa de comissão"
-  validates_presence_of :price_commission, :message => "Insira o valor para cálculo da comissão"
-  validates_numericality_of :price, :message => "Deve ser um número (Use . ao invés de ,)"
-  validates_numericality_of :price_commission, :message => "Deve ser um número (Use . ao invés de ,)"
-  validates_numericality_of :percentage, :message => "Deve ser um número (Não use % apenas o valor)"
-  validates_presence_of :price, :message => "Insira um preço de venda"
+  validates_presence_of :product_id, :on => :create && :update
+  validates_presence_of :customer, :on => :create && :update
+  validates_presence_of :plan, :on => :create && :update
+  validates_presence_of :percentage, :message => "Insira a taxa de comissão", :on => :create && :update
+  validates_presence_of :price_commission, :message => "Insira o valor para cálculo da comissão", :on => :create && :update
+  validates_numericality_of :price, :message => "Deve ser um número (Use . ao invés de ,)", :on => :create && :update
+  validates_numericality_of :price_commission, :message => "Deve ser um número (Use . ao invés de ,)", :on => :create && :update
+  validates_numericality_of :percentage, :message => "Deve ser um número (Não use % apenas o valor)", :on => :create && :update
+  validates_presence_of :price, :message => "Insira um preço de venda", :on => :create && :update
 
   def customer_name
   	customer.name if customer

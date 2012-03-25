@@ -1,4 +1,10 @@
 pt-BR:
+  views:
+    pagination:
+      previous: "Anterior"
+      next: "Próximo"
+      last: "Última"
+      first: "Primeira"
   mongoid:
     errors:
       models:
