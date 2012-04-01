@@ -72,17 +72,37 @@ class SalesController < ApplicationController
   def update
     @sale = Sale.find(params[:id])
 
-    respond_to do |format|
-      if @sale.update_attributes(params[:sale])
-        @sale.sold_on = filter_time(params[:sale], :sold_on)
-        format.html { redirect_to @sale, notice: 'Venda alterada com sucesso.' }
-        format.json { head :ok }
-        @sale.save
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @sale.errors, status: :unprocessable_entity }
+    if @sale != nil
+      s = params[:sale]
+      @sale.sold_on = filter_time(s, :sold_on)
+      @sale.product_id = s[:product] unless s[:product] == ""
+      @sale.employee_id = s[:employee] unless s[:employee] == ""
+      @sale.price = s[:price]
+      @sale.price_commission = s[:price_commission]
+      @sale.percentage = s[:percentage]
+      @sale.plan = s[:plan]
+
+      @sale.save
+
+      respond_to do |f|
+        f.html { redirect_to @sale, notice: 'Venda alterada'}
+      end
+    else
+      respond_to do |f|
+        f.html { render action: "edit", notice: 'Erro ao editar venda'}
       end
     end
+    #respond_to do |format|
+    #  if @sale.update_attributes(params[:sale])
+    #   @sale.sold_on = filter_time(params[:sale], :sold_on)
+    #    format.html { redirect_to @sale, notice: 'Venda alterada com sucesso.' }
+    #    format.json { head :ok }
+    #    @sale.save
+    #  else
+    #    format.html { render action: "edit" }
+    #    format.json { render json: @sale.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /sales/1

@@ -1,7 +1,16 @@
-%h1 Editar venda
-
-= render 'form'
-
+= simple_form_for(@sale) do |f|
+  %h1 Editar venda
+  = f.error_notification
+  .inputs
+    = f.input :sold_on, :label => "Data venda",:as => :date, :start_year => Time.now.year - 2
+    = f.input :price, :label => "Preço"
+    = f.input :price_commission, :label => "Valor para comissão"
+    = f.input :percentage, :label => "Taxa da comissão (%)"
+    = f.input :plan, :label => "Plano", :as => :select, :collection => ["À vista", "1x", "2x", "3x", "4x", "9x", "10x", "11x", "12x"]
+    = f.input :product, :label => "* Produto", :as => :select, :collection => Product.all
+    = f.input :employee, :label => "* Vendedor", :as => :select, :collection => Employee.all
+  .actions
+    = f.button :submit, :value => "Salvar venda"
 = link_to 'Ver', @sale
 \|
 = link_to 'Ir para vendas', sales_path
