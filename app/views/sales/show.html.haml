@@ -17,12 +17,12 @@
   = @sale.plan
 %p
   %b Cliente:
-  = @sale.customer.name
+  = @sale.customer.name unless @sale.customer == nil
 %p
   %b Produto:
-  = @sale.product.name
+  = @sale.product.name unless @sale.product == nil
 %p
   %b Vendedor:
-  = @sale.employee.name
+  = @sale.employee.name unless @sale.employee == nil
 
 = link_to 'Ver todas as vendas', sales_path

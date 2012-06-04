@@ -11,7 +11,7 @@
   </tr>
   <% @sales.each do |sale| %>
     <tr>
-      <td><%= Product.find(sale.product_id).name %></td>
+      <td><%= Product.find(sale.product_id).name unless sale.product_id == nil %></td>
       <td><%= sale.sold_on %></td>
       <td><%= sale.last_change_on %></td>
       <td><%= sale.price %></td>

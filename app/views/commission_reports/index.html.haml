@@ -13,11 +13,11 @@
   - @sales.each do |sale|
     %tr
       %td= sale.sold_on
-      %td=  Customer.find(sale.customer_id).name
+      %td= Customer.find(sale.customer_id).name unless sale.customer_id == nil
       %td= sale.price
       %td= sale.percentage
       %td= sale.price_commission
-      %td= Product.find(sale.product_id).name
+      %td= Product.find(sale.product_id).name unless sale.product_id == nil
       %td= sale.plan
 
 %br

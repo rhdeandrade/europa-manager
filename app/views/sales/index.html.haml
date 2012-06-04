@@ -19,7 +19,7 @@
       %td= sale.plan
       %td= sale.employee.name unless sale.employee == nil
       %td= sale.customer.name unless sale.customer == nil
-      %td= sale.product.name unless sale. product == nil
+      %td= sale.product.name unless sale.product == nil
       %td
         = link_to 'Ver', sale
         = link_to 'Apagar', sale, :confirm => 'Deletar esta venda?', :method => :delete
