@@ -22,7 +22,7 @@ class CommissionReportsController < ApplicationController
     @sales = Sale.where(:sold_on.gte => start_date, :sold_on.lte => end_date, employee_id: params[:employee_id])
 
     @total = 0
-    @sales.map{|s| @total += (s.price_commission.gsub(",",".") * s.percentage.gsub(",",".")) / 100}
+    @sales.map{|s| @total += (s.price_commission.to_sgsub(",",".").to_f * s.percentage.gsub.to_s(",",".").to_f) / 100}
 
   end
 end
