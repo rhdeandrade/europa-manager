@@ -1,26 +1,79 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    <title>Europa Manager</title>
-    <%= stylesheet_link_tag "application"%>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tag %>
-    <%= yield(:head) %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "EuropaManager" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    <div id="container" class="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
-      <%= link_to "Home", root_path %> -
-      <%= link_to "Nova venda", new_sale_path %> -
-      <%= link_to "Todas as vendas", sales_path %> -
-      <%= link_to "Relatório de vendas", new_report_path %> -
-      <%= link_to "Relatório de Comissões", new_commission_report_path %> -
-      <%= link_to "Procurar Cliente", find_customer_new_path %>
-      <%= yield %>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <%= link_to "EuropaManager", root_path, :class => "brand" %>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Todos os Clientes", customers_path  %></li>
+              <li><%= link_to "Todas as Vendas", sales_path  %></li>
+              <li><%= link_to "Nova Venda", new_sale_path  %></li>
+              <li><%= link_to "Relatório de Vendas", new_report_path  %></li>
+              <li><%= link_to "Relatório de Comissões", new_commission_report_path  %></li>
+              <li><%= link_to "Procurar Cliente", find_customer_new_path  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
     </div>
+
+    <div class="container">
+      <div class="content">
+        <%= yield %>    
+      </div><!--/content-->
+
+      <footer>
+        <p>&copy; WaterPura 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+
   </body>
 </html>

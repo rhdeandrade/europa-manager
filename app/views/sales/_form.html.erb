@@ -1,0 +1,21 @@
+<%= simple_form_for @sale, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :sold_on, :label => "Data venda",:as => :date, :start_year => Time.now.year - 2 %>
+  <%= f.input :price, :label => "Preço" %>
+  <%= f.input :price_commission, :label => "Valor para comissão" %>
+  <%= f.input :percentage, :label => "Taxa da comissão (%)" %>
+  <%= f.input :plan, :label => "Plano", :as => :select, :collection => ["À vista", "1x", "2x", "3x", "4x", "9x", "10x", "11x", "12x"] %>
+  <%= f.hidden_field :customer_id %>
+  <%= f.input :customer_name, :label => "* Cliente" %>
+  <%= f.input :product, :label => "* Produto", :as => :select, :collection => Product.all %>
+  <%= f.input :employee, :label => "* Vendedor", :as => :select, :collection => Employee.all %>
+  <label class="string required">Troca de Câmara</label>
+  <%= f.check_box(:change_chamber) %>
+  <%= f.input :sale_id, :label => "Produto da troca",:as => :select, :collection => [] %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary', :value => "Salvar Venda" %>
+    <%= link_to "Cancelar",
+                sales_path, :class => 'btn' %>
+  </div>
+<% end %>

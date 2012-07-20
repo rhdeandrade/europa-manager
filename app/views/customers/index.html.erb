@@ -1,0 +1,42 @@
+<%- model_class = Customer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Dt de Nascimento</th>
+      <th>CPF</th>
+      <th>RG</th>
+      <th>Endereço</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>CEP</th>
+      <th>Telefone</th>
+      <th>Celular</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= link_to customer.name, customer_path(customer) %></td>
+        <td><%= customer.date_of_birth %></td>
+        <td><%= customer.cpf %></td>
+        <td><%= customer.rg %></td>
+        <td><%= customer.address %></td>
+        <td><%= customer.neighborhood %></td>
+        <td><%= customer.city %></td>
+        <td><%= customer.cep %></td>
+        <td><%= customer.phone_number %></td>
+        <td><%= customer.mobile_phone %></td>
+        <td>
+          <%= link_to "Editar", edit_customer_path(customer), :class => 'btn btn-small' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @customers %>
+<%= link_to "Novo", new_customer_path, :class => 'btn btn-primary' %>

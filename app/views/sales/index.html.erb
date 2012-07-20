@@ -1,0 +1,47 @@
+<%- model_class = Sale -%>
+<div class="page-header">
+  <h1>Vendas</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Data da Venda</th>
+      <th>Última Troca</th>
+      <th>Preço</th>
+      <th>Plano</th>
+      <th>Cliente</th>
+      <th>Produto</th>
+      <th>Vendedor</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        
+        <td><%= sale.sold_on %></td>
+        <td><%= sale.last_change_on %></td>
+        <td><%= sale.price %></td>
+        <td><%= sale.plan %></td>
+        <td><%= sale.customer.name unless sale.customer == nil %></td>
+        <td><%= sale.product.name unless sale.product == nil %></td>
+        <td><%= sale.employee.name unless sale.employee == nil %></td>
+        
+        <td>
+          <%= link_to "Editar", edit_sale_path(sale), :class => 'btn btn-mini' %>
+          <%= link_to "Ver", sale_path(sale), :class => 'btn btn-mini' %>
+          <%= link_to "Apagar",
+                      sale_path(sale),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Tem Certeza?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @sales %>
+<%= link_to "Nova Venda",
+            new_sale_path,
+            :class => 'btn btn-primary' %>

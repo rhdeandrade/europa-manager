@@ -1,0 +1,18 @@
+<%= simple_form_for @customer, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name, :label => "Nome" %>
+  <%= f.input :date_of_birth, :label => "Data de nascimento", :as => :date, :start_year => 1920 %>
+  <%= f.input :cpf, :label => "CPF SEM Pontos, Vírgulas ou Traços" %>
+  <%= f.input :rg, :label => "RG SEM Pontos, Vírgulas ou Traços" %>
+  <%= f.input :address, :label => "Endereço (Ex: Rua, 12)" %>
+  <%= f.input :neighborhood, :label => "Bairro" %>
+  <%= f.input :city, :label => "Cidade", :as => :select, :collection => City.all.map{|c| [c.name, c.name]} %>
+  <%= f.input :cep, :label => "CEP (Ex: 89183120)" %>
+  <%= f.input :work_address, :label => "Local de Trabalho" %>
+  <%= f.input :phone_number, :label => "Telefone" %>
+  <%= f.input :mobile_phone, :label => "Celular" %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary', :value => "Salvar Cliente" %>
+    <%= link_to t('.cancel', :default => "Cancelar"), customers_path, :class => 'btn' %>
+  </div>
+<% end %>

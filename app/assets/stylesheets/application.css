@@ -4,129 +4,22 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require jquery-ui
+ *= require bootstrap_and_overrides
  *= require_tree .
 */
 
-html, body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
-}
-
-a img {
-  border: none;
-}
-
-a {
-  color: #0000FF;
-}
-
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
-table {
-  width: 100%;
+.error, .error_notification {
+  padding: 3px 35px 5px 14px;
   margin-bottom: 18px;
-  padding: 0;
-  font-size: 13px;
-  border-collapse: collapse;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid #FBEED5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border-color: #EED3D7;
 }
-
-table tbody {
-  border-top: 1px solid #ddd;
-  vertical-align: top;
-}
-
-th, td {
-  padding: 2px 2px 4px;
-  text-align: center;
-}
-
-#container {
-  width: 80%;
-  margin-left: 7%; margin-right: 10%;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
-}
-
-#flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
-}
-
-#flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
-
-#flash_error, #flash_alert {
-  background-color: #FCC;
-  border: solid 1px #C66;
-}
-
-.error_messages {
-  width: 400px;
-  border: 2px solid #CF0000;
-  padding: 0px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  font-size: 12px;
-}
-
-span.error {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 10px;
-  font-size: 13px;
-  margin: 0;
-  color: #c00;
-}
-
-p.error_notification,.error_messages h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 10px;
-  font-size: 12px;
-  margin: 0;
-  background-color: #c00;
-  color: #fff;
-}
-
-.error_messages p {
-  margin: 8px 10px;
-}
-
-.error_messages ul {
-  margin: 0;
-}
-
-.field_with_errors {
-  display: inline;
-}
-
-form .field, form .actions {
-  margin: 10px 0;
-}
-
-form label {
-  display: block;
-}
-
-li {
-  margin: 10px 0 18px 25px;
-}
-  margin-bottom: 0;
-}
-ul {
-  list-style: disc;
-}
-
 
 .customer_find {
   width: 300px

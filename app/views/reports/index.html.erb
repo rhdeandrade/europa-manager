@@ -1,0 +1,22 @@
+<h1> Gerar Relatório de Vendas </h1>
+
+<table class="table table-striped">
+  <tr>
+    <th> Data venda </th>
+    <th> Última troca</th>
+    <th> Preço</th>
+    <th> Telefone cliente</th>
+    <th> Celular cliente</th>
+    <th> Produto</th>
+  </tr>
+  <% @sales.each do |sale| %>
+    <tr>
+      <td><%= sale.sold_on %></td>
+      <td><%= sale.last_change_on %></td>
+      <td><%= sale.price %></td>
+      <td><%= Customer.find(sale.customer_id).phone_number %></td>
+      <td><%= Customer.find(sale.customer_id).mobile_phone %></td>
+      <td><%= Product.find(sale.product_id).name %></td>
+    </tr>
+  <% end %>
+</table>

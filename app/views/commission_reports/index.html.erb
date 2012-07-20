@@ -1,0 +1,28 @@
+<h1>Relatório de Comissões</h1>
+<table class="table table-striped">
+  <tr>
+    <th> Data Venda </th>
+    <th> Nome do Cliente</th>
+    <th> Preço</th>
+    <th> Comissão (%)</th>
+    <th> Valor comissão</th>
+    <th> Produto</th>
+    <th> Plano</th>
+  </tr>
+  <% @sales.each do |sale| %>
+    <tr>
+      <td><%= sale.sold_on %> </td>
+      <td><%= Customer.find(sale.customer_id).name unless sale.customer_id == nil %> </td>
+      <td><%= sale.price %></td>
+      <td><%= sale.percentage %></td>
+      <td><%= sale.price_commission %></td>
+      <td><%= Product.find(sale.product_id).name unless sale.product_id == nil %> </td>
+      <td<%= sale.plan %> </td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<div class="alert alert-success">
+<p> Total (Valor para comissão * Porcentagem):
+<%= @total %>
+</div>

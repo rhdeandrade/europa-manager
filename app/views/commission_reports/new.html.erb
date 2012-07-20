@@ -1,16 +1,20 @@
-<%= form_tag(commission_reports_path, :method => "get") do  %>
- <p/>
-    Vendedor:
-    <%= select_tag "employee_id", options_from_collection_for_select(Employee.all, "id", "name"), :include_blank => true%>
+<h1>Relatório de Comissões</h1>
+<ul class="nav nav-list">
+<li class="divider"></li>
+</ul>
+<%= form_tag(commission_reports_path, :method => "get", :class => "simple_form form-horizontal") do  %>
+<div class="input">
 
- <p/>
- 	Data Inicio:
-    <%= date_select("start_date", "date", :order => [:day, :month, :year]) %>
- <p/>
- 	Data Fim:
-    <%= date_select("end_date", "date", :order => [:day, :month, :year]) %>
- <p/>
+	<label class="string">Vendedor:</label>
+	<%= select_tag "employee_id", options_from_collection_for_select(Employee.all, "id", "name"), :include_blank => true%>
 
-  <%= submit_tag 'Gerar relatório' %>
+	<label class="string">Data Inicio:</label>
+	<%= date_select("start_date", "date", :order => [:day, :month, :year]) %>
+	
+	<label class="string">Data Fim:</label>
+	<%= date_select("end_date", "date", :order => [:day, :month, :year]) %>
+</div>
+<br>
+<%= submit_tag 'Gerar relatório', :class => "btn btn-primary" %>
 
 <% end %>

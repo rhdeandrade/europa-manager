@@ -1,8 +1,11 @@
 <h1>Procurar clientes</h1>
-<%= form_tag(find_customer_index_path, :method => "get", :class => "simple_form") do  %>
-  Nome:
-  <%= text_field_tag "customer_name", nil,:class => 'customer_find' %>
-  <p/>
-  <%= submit_tag 'Procurar' %>
+<%= form_tag(find_customer_index_path, :method => "get", :class => "simple_form form-horizontal") do  %>
+	<div class="input">
+		<br>
+	  <label class="string">Nome:</label>
+	  <%= text_field_tag "customer_name", nil,:class => 'customer_find' %>
+  </div>
+  <br>
+  <%= submit_tag 'Procurar', :class => "btn btn-primary" %>
 
 <% end %>

@@ -2,8 +2,12 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.where(name: /^#{params[:term]}/i)
-    list = @customers.map {|c| Hash[ id: c.id, label: c.name ]}
+    if (params[:term] !=  nil)
+      @customers = Customer.where(name: /^#{params[:term]}/i)
+      list = @customers.map {|c| Hash[ id: c.id, label: c.name ]}
+    else
+      @customers = Customer.page(params[:page]).per(30)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +45,11 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
+    c = params[:customer]
+    c[:cpf] = c[:cpf].gsub(".","")
+
+    params[:customer] = c
+
     @customer = Customer.new(params[:customer])
     @customer.date_of_birth = filter_time(params[:customer], :date_of_birth)
 

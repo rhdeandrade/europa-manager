@@ -1,0 +1,16 @@
+<h1> Gerar relatório </h1>
+
+<%= form_tag(reports_path, :method => 'get', :class => "simple_form form-horizontal") do %>
+
+  <div class="inputs">
+    <label class="string">Cidade:</label>
+    <%= collection_select("city", "city", City.all, :name, :name) %>
+    <label class="string">Bairro:</label>
+    <%= text_field_tag "neighborhood" %>
+    
+  </div>
+  <br>
+  <%= submit_tag 'Enviar', :class => "btn btn-primary" %>
+  <%= link_to "Ver todas as vendas", sales_path, :class => "btn" %>
+
+<% end %>

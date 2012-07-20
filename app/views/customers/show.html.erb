@@ -1,0 +1,34 @@
+<%- model_class = Customer -%>
+<div class="page-header">
+  <h1>Cliente</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @customer.name %></dd>
+  <dt><strong>Dt de Nascimento:</strong></dt>
+  <dd><%= @customer.date_of_birth %></dd>
+  <dt><strong>CPF:</strong></dt>
+  <dd><%= @customer.cpf %></dd>
+  <dt><strong>RG:</strong></dt>
+  <dd><%= @customer.rg %></dd>
+  <dt><strong>Endereço:</strong></dt>
+  <dd><%= @customer.address %></dd>
+  <dt><strong>Bairro:</strong></dt>
+  <dd><%= @customer.neighborhood %></dd>
+  <dt><strong>Cidade:</strong></dt>
+  <dd><%= @customer.city %></dd>
+  <dt><strong>CEP:</strong></dt>
+  <dd><%= @customer.cep %></dd>
+  <dt><strong>Endereço de Trabalho:</strong></dt>
+  <dd><%= @customer.work_address %></dd>
+  <dt><strong>Telefone:</strong></dt>
+  <dd><%= @customer.phone_number %></dd>
+  <dt><strong>Celular:</strong></dt>
+  <dd><%= @customer.mobile_phone %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to "Voltar", customers_path, :class => 'btn'  %>
+  <%= link_to "Editar", edit_customer_path(@customer), :class => 'btn' %>
+</div>

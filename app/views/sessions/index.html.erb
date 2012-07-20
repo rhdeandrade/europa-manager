@@ -1,0 +1,22 @@
+<h1>Escolha uma opção</h1>
+<div class="well">
+	<ul class="nav nav-list">
+
+		<li class="divider"></li>
+		<li><%= link_to "Ver Todos os Produtos", products_path %></li>
+		<li><%= link_to "Cadastrar Novo Produto", new_product_path %></li>
+		<li class="divider"></li>
+		<li><%= link_to "Ver Todos os Funcionários", employees_path %></li>
+		<li><%= link_to "Cadastrar Novo Funcionário", new_employee_path %></li>
+		<li class="divider"></li>
+		<li><%= link_to "Cadastrar novo cliente", new_customer_path %></li>
+		<li><%= link_to "Ver todos os clientes", customers_path %></li>
+		<li><%= link_to "Procurar cliente", find_customer_new_path %></li>
+		<li class="divider"></li>
+		<li><%= link_to "Gerar relatório de vendas", new_report_path %> </li>
+		<li><%= link_to "Gerar comissão por vendedor", new_commission_report_path %> </li>
+		<li class="divider"></li>
+		<li><%= link_to "Ver todas as Vendas", sales_path %> </li>
+		<li><%= link_to "Cadastrar Nova venda", new_sale_path %></li>
+	</ul>
+</div>

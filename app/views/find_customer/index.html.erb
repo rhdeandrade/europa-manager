@@ -1,5 +1,5 @@
 <h1>Procurar clientes</h1>
-<table>
+<table class="table table-striped">
   <tr>
     <th>Nome</th>
     <th>CPF</th>
@@ -14,7 +14,7 @@
       <td><%= customer.cpf %></td>
       <td><%= customer.phone_number %></td>
       <td><%= customer.address %></td>
-      <td><%= link_to "Todas as vendas", customer_view_sales_path(customer) %></td>
+      <td><%= link_to "Todas as vendas", customer_view_sales_path(customer), :class => "btn btn-primary" %></td>
 
     </tr>
   <% end %>

@@ -30,8 +30,6 @@ end
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem "capybara", :group => [:development, :test]
-gem "haml"
-gem "haml-rails"
 gem "jquery-rails"
 gem "bson_ext"
 gem "mongoid"
@@ -45,3 +43,5 @@ gem "rails-i18n"
 gem 'execjs'
 gem 'therubyracer'
 gem 'kaminari'
+
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'

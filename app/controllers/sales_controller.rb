@@ -47,6 +47,10 @@ class SalesController < ApplicationController
   def create
     @sale = Sale.new(params[:sale])
     @sale.sold_on = filter_time(params[:sale], :sold_on)
+    @sale.price = @sale.price.to_s.gsub(",",".").to_f
+    @sale.percentage = @sale.percentage.to_s.gsub(",",".").to_f
+    @sale.price_commission = @sale.price_commission.to_s.gsub(",",".").to_f
+
 
     @sale.last_change_on = @sale.sold_on
     if @sale.change_chamber

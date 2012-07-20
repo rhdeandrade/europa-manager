@@ -1,0 +1,9 @@
+<%= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+	<%= f.error_notification %>
+  <%= f.input :name, :label => "Nome" %>
+  <%= f.input :validity, :label => "Validade", :as => :select, :collection => [0, 12, 24] %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary', :value => "Salvar" %>
+    <%= link_to "Cancelar", products_path, :class => 'btn' %>
+  </div>
+<% end %>

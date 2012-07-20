@@ -1,0 +1,22 @@
+<%- model_class = Sale -%>
+<div class="page-header">
+  <h1>Editar Venda</h1>
+</div>
+<%= simple_form_for(@sale) do |f| %>
+  <%= f.error_notification %>
+  <div class="inputs">
+    <%= f.input :sold_on, :label => "Data venda",:as => :date, :start_year => Time.now.year - 2 %>
+    <%= f.input :price, :label => "Preço" %>
+    <%= f.input :price_commission, :label => "Valor para comissão" %>
+    <%= f.input :percentage, :label => "Taxa da comissão (%)" %>
+    <%= f.input :plan, :label => "Plano", :as => :select, :collection => ["À vista", "1x", "2x", "3x", "4x", "9x", "10x", "11x", "12x"] %>
+    <%= f.input :product, :label => "* Produto", :as => :select, :collection => Product.all %>
+    <%= f.input :employee, :label => "* Vendedor", :as => :select, :collection => Employee.all %>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, :value => "Salvar venda", :class => "btn btn-primary" %>
+  </div>
+<% end %>
+<%= link_to 'Ver', @sale, :class => "btn" %>
+<%= link_to 'Ir para vendas', sales_path, :class => "btn" %>
+
