@@ -121,4 +121,26 @@ class SalesController < ApplicationController
     end
   end
 
+  def export_sales
+    @sales = Sale.all()
+    sales_string = 'Nome;Produto;Data Compra;Data Ultima Troca;Telefone;Celular<br>'
+    @sales.each do |s|
+      sales_string += s.customer.name unless s.customer == nil
+      sales_string += ';'
+      sales_string += s.product.name unless s.product == nil
+      sales_string += ';'
+      sales_string += s.sold_on.to_s + ';'
+      sales_string += s.last_change_on.to_s + ';'
+      sales_string += s.customer.phone_number.to_s unless s.customer == nil
+      sales_string += ';'
+      sales_string += s.customer.mobile_phone.to_s unless s.customer == nil
+      sales_string += '<br>'
+    end
+
+    respond_to do |format|
+      format.html {render :text => sales_string}
+    end
+
+  end
+
 end

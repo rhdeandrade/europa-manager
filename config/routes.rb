@@ -16,6 +16,7 @@ EuropaManager::Application.routes.draw do
 
   get "sessions/index"
 
+  get "sales/export_sales" => "sales#export_sales"
   #get "/save_cities" => "cities#save_all_cities"
 
   #match "/customers/:id" => "patients#show"
